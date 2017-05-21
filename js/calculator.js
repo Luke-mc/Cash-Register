@@ -12,7 +12,7 @@ function calculatorModule(){
 //load number
 function load(x){
 
-return total;
+return total = x;
 
 
 
@@ -46,6 +46,7 @@ isValid(x);
 
   return total -= x;
 
+
 };
 
 
@@ -53,6 +54,7 @@ isValid(x);
 function multiply(x){
 
 isValid(x);
+
 
   return total *= x;
 
@@ -86,7 +88,7 @@ function saveMemory(x){
 //clear
 function clearMemory(x){
 
-   return memory = 0;
+   return total = 0;
 
 };
 
@@ -128,3 +130,4 @@ return {
 }
 
 
+var myCalculator = calculatorModule();

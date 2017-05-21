@@ -1,53 +1,130 @@
 var cashRegister = (function() {
 
   var display = [];
+  var displayValue = 0;
+  var lastOperation = '';
+  var balance = 0;
 
   var _display = function(value) {
     display.push(value);
     document.getElementById("display").innerHTML = display.join('');
   };
 
+
+   var _clearAll = function() {
+    document.getElementById("display").innerHTML = '0.00';
+    display =[];
+    myCalculator.clearMemory();
+  };
+
   var _clear = function() {
+    document.getElementById("display").innerHTML = '0.00';
+    display = [];
+  };
 
- document.getElementById("display").innerHTML = '0.00';
+  var _getBalance = function() {
 
- display =[];
+
+    _display(balance);
+
+  };
+
+  var _deposit = function() {
+
+    displayValue = parseInt( display.join('') );
+    balance += displayValue;
+    _clear();
 
 
   };
 
-  var _getBalance = function(myCalculator) {
+  var _withdraw = function() {
+
+    displayValue = parseInt( display.join('') );
+    balance -= displayValue;
+     _clear();
 
   };
 
-  var _deposit = function(myCalculator) {
 
+  var _addition = function(myCalculator) {
+    displayValue = parseInt( display.join('') );
+    myCalculator.add( displayValue );
+    _clear();
+    lastOperation = 'add';
   };
 
-  var _withdraw = function(myCalculator) {
-
+  var _subtraction = function(myCalculator) {
+    displayValue = parseInt( display.join('') );
+    myCalculator.load( displayValue );
+    _clear();
+    lastOperation = 'subtract';
   };
 
-  var _add = function(num){
+  var _multiplication = function(myCalculator) {
+    displayValue = parseInt( display.join('') );
+    myCalculator.load( displayValue );
+    _clear();
+    lastOperation = 'multiply';
+  };
 
-    myCalculator.load(display);
-    myCalculator.add(num);
-    myCalculator.saveMemory();
-    myCalculator.recallMemory();
-    display(myCalculator.getTotal());
+  var _division = function(myCalculator) {
+    displayValue = parseInt( display.join('') );
+    myCalculator.load( displayValue );
+    _clear();
+    lastOperation = 'divide';
+  };
+
+  var _equals = function(myCalculator){
+    switch(lastOperation){
+      case 'add': {
+        displayValue = parseInt( display.join('') );
+        myCalculator.add( displayValue );
+        _clear();
+        _display( myCalculator.getTotal() );}
+        break;
+
+     case 'subtract': {
+        displayValue = parseInt( display.join('') );
+        myCalculator.subtract( displayValue );
+        _clear();
+        _display( myCalculator.getTotal() );}
+        break;
+
+    case 'multiply':{
+        displayValue = parseInt( display.join('') );
+        myCalculator.multiply( displayValue );
+        _clear();
+        _display( myCalculator.getTotal() );}
+        break;
+
+     case 'divide':{
+        displayValue = parseInt( display.join('') );
+        myCalculator.divide( displayValue );
+        _clear();
+        _display( myCalculator.getTotal() );}
+        break;
+
+      default: break;
+    }
 
 
   };
-
 
 
   return {
     display: _display,
+    clearAll: _clearAll,
     clear: _clear,
     getBalance: _getBalance,
     deposit: _deposit,
     withdraw: _withdraw,
-    add: _add,
+    addition: _addition,
+    subtraction: _subtraction,
+    multiplication: _multiplication,
+    division: _division,
+    equals: _equals
+
   };
 
 });
