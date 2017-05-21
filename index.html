@@ -13,15 +13,11 @@
       }
     </style>
 
-    <script>
-      var myCashRegister = cashRegister();
-      var myCalculator = calculatorModule();
-    </script>
-
     <!--Display Container Goes Here -->
     <div class="display-container">
-        <h1 id="display">
-          "I'm InnerHTML"
+        <h1> $ </h1>
+        <h1 id="display" style="text-align: right;">
+          0.00
         </h1>
     </div>
 
@@ -30,28 +26,29 @@
       <div class="gridwrapper">
         <div class="gridcontent">
           <button id="7" type="button" onclick="myCashRegister.display(7)">"7"</button>
-          <button id="8">>"8"</button>
-          <button id="9">"9"</button>
-          <button id="/">"/"</button>
-          <button id="Clr">"Clr"</button>
+          <button id="8" type="button" onclick="myCashRegister.display(8)">"8"</button>
+          <button id="9" type="button" onclick="myCashRegister.display(9)">"9"</button>
+          <button id="/" type="button" onclick="">"/"</button>
+          <button id="Clr" type="button" onclick="">"Clr"</button>
         </div>
         <div class="gridcontent">
-          <button id="4">"4"</button>
-          <button id="5">"5"</button>
-          <button id="6">"6"</button>
+          <button id="4" type="button" onclick="myCashRegister.display(4)">"4"</button>
+          <button id="5" type="button" onclick="myCashRegister.display(5)">"5"</button>
+          <button id="6" type="button" onclick="myCashRegister.display(6)">"6"</button>
+          <button id="multiply">" * "</button>
           <button id="get-balance">"get balance"</button>
         </div>
         <div class="gridcontent">
-          <button id="1">"1"</button>
-          <button id="2">"2"</button>
-          <button id="3">"3"</button>
-          <button id="4">"-"</button>
-          <button id="deposit-cash">"deposit Cash"</button>
+          <button id="1" type="button" onclick="myCashRegister.display(1)"> "1" </button>
+          <button id="2" type="button" onclick="myCashRegister.display(2)"> "2" </button>
+          <button id="3" type="button" onclick="myCashRegister.display(3)"> "3" </button>
+          <button id="subract" type="button" onclick=""> "-" </button>
+          <button id="deposit-cash"> "deposit Cash" </button>
         </div>
         <div class="gridcontent">
-          <button id="0">"0"</button>
-          <button id="00">"00"</button>
-          <button id=".">"."</button>
+          <button id="0" type="button" onclick="myCashRegister.display(0)">"0"</button>
+          <button id="00" type="button" onclick="myCashRegister.display('00')">"00"</button>
+          <button id="." type="button" onclick="myCashRegister.display('.')">"."</button>
           <button id="+">"+"</button>
           <button id="withdraw-cash">"withdraw cash"</button>
         </div>
@@ -67,8 +64,8 @@
 
 
     <!--Include the JS Files Here -->
-    <script src="calculator.js"></script>
-    <script src="cash_register.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/cash_register.js"></script>
 
   </body>
 </html>

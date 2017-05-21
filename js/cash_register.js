@@ -3,8 +3,8 @@ var cashRegister = (function() {
   var display = [];
 
   var _display = function(value) {
-    display.unshift(value);
-    document.getElementById("display").innerHTML = display.join();
+    display.push(value);
+    document.getElementById("display").innerHTML = display.join('');
   };
 
   var _clear = function(myCalculator) {
@@ -32,3 +32,5 @@ var cashRegister = (function() {
   };
 
 });
+
+var myCashRegister = cashRegister();
