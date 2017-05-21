@@ -4,6 +4,9 @@ var cashRegister = (function() {
   var displayValue = 0;
   var lastOperation = '';
   var balance = 0;
+  var total = 0;
+  var memory = 0;
+
 
   var _display = function(value) {
     display.push(value);
@@ -49,6 +52,9 @@ var cashRegister = (function() {
 
   var _addition = function(myCalculator) {
     displayValue = parseInt( display.join('') );
+    total = memory + displayValue;
+    memory = total;
+    document.getElementById('display').innerHTML = total;
     myCalculator.add( displayValue );
     _clear();
     lastOperation = 'add';
@@ -56,6 +62,9 @@ var cashRegister = (function() {
 
   var _subtraction = function(myCalculator) {
     displayValue = parseInt( display.join('') );
+    total = memory - displayValue;
+    memory = total;
+    document.getElementById('display').innerHTML = total;
     myCalculator.load( displayValue );
     _clear();
     lastOperation = 'subtract';
@@ -63,6 +72,9 @@ var cashRegister = (function() {
 
   var _multiplication = function(myCalculator) {
     displayValue = parseInt( display.join('') );
+    total = memory * displayValue;
+    memory = total;
+    document.getElementById('display').innerHTML = total;
     myCalculator.load( displayValue );
     _clear();
     lastOperation = 'multiply';
@@ -70,6 +82,9 @@ var cashRegister = (function() {
 
   var _division = function(myCalculator) {
     displayValue = parseInt( display.join('') );
+    total = memory / displayValue;
+    memory = total;
+    document.getElementById('display').innerHTML = total;
     myCalculator.load( displayValue );
     _clear();
     lastOperation = 'divide';
@@ -131,5 +146,4 @@ var cashRegister = (function() {
 
 var myCashRegister = cashRegister();
 
-var myCalculator = calculatorModule();
 
