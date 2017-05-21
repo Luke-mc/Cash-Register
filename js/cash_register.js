@@ -55,7 +55,7 @@ var cashRegister = (function() {
     total = memory + displayValue;
     memory = total;
     document.getElementById('display').innerHTML = total;
-    myCalculator.add( displayValue );
+    myCalculator.load( displayValue );
     _clear();
     lastOperation = 'add';
   };
