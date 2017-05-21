@@ -7,7 +7,12 @@ var cashRegister = (function() {
     document.getElementById("display").innerHTML = display.join('');
   };
 
-  var _clear = function(myCalculator) {
+  var _clear = function() {
+
+ document.getElementById("display").innerHTML = '0.00';
+
+ display =[];
+
 
   };
 
