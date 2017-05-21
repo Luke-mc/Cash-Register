@@ -1,23 +1,34 @@
 var cashRegister = (function() {
 
-  var display = function() {
+  var display = [];
+
+  var _display = function(value) {
+    display.unshift(value);
+    document.getElementById("display").innerHTML = display.join();
+  };
+
+  var _clear = function(myCalculator) {
 
   };
 
-  var clear = function() {
+  var _getBalance = function(myCalculator) {
 
   };
 
-  var getBalance = function() {
+  var _deposit = function(myCalculator) {
 
   };
 
-  var deposit = function() {
+  var _withdraw = function(myCalculator) {
 
   };
 
-  var withdraw = function() {
-
+  return {
+    display: _display,
+    clear: _clear,
+    getBalance: _getBalance,
+    deposit: _deposit,
+    withdraw: _withdraw
   };
 
 });
