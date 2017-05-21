@@ -129,3 +129,4 @@ return {
 }
 
 
+var myCalculator = calculatorModule();
