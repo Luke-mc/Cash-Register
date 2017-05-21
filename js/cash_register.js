@@ -28,14 +28,31 @@ var cashRegister = (function() {
 
   };
 
+  var _add = function(num){
+
+    myCalculator.load(display);
+    myCalculator.add(num);
+    myCalculator.saveMemory();
+    myCalculator.recallMemory();
+    display(myCalculator.getTotal());
+
+
+  };
+
+
+
   return {
     display: _display,
     clear: _clear,
     getBalance: _getBalance,
     deposit: _deposit,
-    withdraw: _withdraw
+    withdraw: _withdraw,
+    add: _add,
   };
 
 });
 
 var myCashRegister = cashRegister();
+
+var myCalculator = calculatorModule();
+

@@ -4,16 +4,15 @@ function calculatorModule(){
 
   var memory = 0;
 
-
   var total = 0;
 
-var calculator = {};
+  var calculator = {};
 
 
 //load number
 function load(x){
 
-isValid(x);
+return total;
 
 
 
