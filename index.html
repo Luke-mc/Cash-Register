@@ -13,6 +13,11 @@
       }
     </style>
 
+    <script>
+      var myCashRegister = cashRegister();
+      var myCalculator = calculatorModule();
+    </script>
+
     <!--Display Container Goes Here -->
     <div class="display-container">
         <h1 id="display">
@@ -24,7 +29,7 @@
     <div class="buttons gridcontainer">
       <div class="gridwrapper">
         <div class="gridcontent">
-          <button id="7">"7"</button>
+          <button id="7" type="button" onclick="myCashRegister.display(7)">"7"</button>
           <button id="8">>"8"</button>
           <button id="9">"9"</button>
           <button id="/">"/"</button>
