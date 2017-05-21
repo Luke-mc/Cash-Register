@@ -4,11 +4,16 @@ var cashRegister = (function() {
 
   var _display = function(value) {
     display.push(value);
-    document.getElementById("display").innerHTML = display.join('');
+    if( display === [] ){
+      document.getElementById("display").innerHTML = "0.00";
+    } else {
+      document.getElementById("display").innerHTML = display.join('');
+    }
   };
 
   var _clear = function(myCalculator) {
-
+    display = [];
+    _display();
   };
 
   var _getBalance = function(myCalculator) {
