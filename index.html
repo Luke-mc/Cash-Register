@@ -1,19 +1,12 @@
 <html>
   <head>
     <title>Cash Register</title>
+
   </head>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
   <body>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-  <!--Styling for Now -->
-    <style>
-      .display-container {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        background-color: cornflowerblue;
-      }
-    </style>
   <div class= "cash-register">    <!--Display Container Goes Here -->
     <div class="display-container">
         <h1 id= "dollar-sign"> $ </h1>
@@ -22,57 +15,74 @@
         </h1>
     </div>
 
+    <div class="container">
+      <h2>Total</h2>
+      <p>
+        __________________________
+        __________________________
+        __________________________
+        __________________________
+        __________________________
+        __________________________
+        __________________________
+        __________________________
+        __________________________
+      </p>
+    </div>
+
+
     <!--Buttons for the Cash Register -->
     <div class="buttons gridcontainer">
       <div class="gridwrapper">
         <div class="gridcontent">
 
-          <button id="7" type="button" onclick="myCashRegister.display(7)">"7"</button>
-          <button id="8" type="button" onclick="myCashRegister.display(8)">"8"</button>
-          <button id="9" type="button" onclick="myCashRegister.display(9)">"9"</button>
-          <button id="/" type="button" onclick="myCashRegister.division(myCalculator)">"/"</button>
-          <button id="Clr" type="button" onclick="myCashRegister.clearAll()">"Clr"</button>
+          <button id="7" type="button" onclick="myCashRegister.display(7)"> 7 </button>
+          <button id="8" type="button" onclick="myCashRegister.display(8)"> 8 </button>
+          <button id="9" type="button" onclick="myCashRegister.display(9)"> 9 </button>
+          <button id="Clr" type="button" onclick="myCashRegister.clearAll()">Clear</button>
 
         </div>
         <div class="gridcontent">
 
-          <button id="4" type="button" onclick="myCashRegister.display(4)">"4"</button>
-          <button id="5" type="button" onclick="myCashRegister.display(5)">"5"</button>
-          <button id="6" type="button" onclick="myCashRegister.display(6)">"6"</button>
-          <button id="multiply" onclick="myCashRegister.multiplication(myCalculator)">" * "</button>
-          <button id="get-balance" onclick="myCashRegister.getBalance()">"get balance"</button>
+          <button id="4" type="button" onclick="myCashRegister.display(4)"> 4 </button>
+          <button id="5" type="button" onclick="myCashRegister.display(5)"> 5 </button>
+          <button id="6" type="button" onclick="myCashRegister.display(6)"> 6 </button>
+          <button id="get-balance" onclick="myCashRegister.getBalance()">Get Balance</button>
 
         </div>
         <div class="gridcontent">
 
-          <button id="1" type="button" onclick="myCashRegister.display(1)"> "1" </button>
-          <button id="2" type="button" onclick="myCashRegister.display(2)"> "2" </button>
-          <button id="3" type="button" onclick="myCashRegister.display(3)"> "3" </button>
-          <button id="subract" type="button" onclick="myCashRegister.subtraction(myCalculator)"> "-" </button>
-          <button id="deposit-cash" onclick="myCashRegister.deposit()"> "deposit Cash" </button>
+          <button id="1" type="button" onclick="myCashRegister.display(1)"> 1 </button>
+          <button id="2" type="button" onclick="myCashRegister.display(2)"> 2 </button>
+          <button id="3" type="button" onclick="myCashRegister.display(3)"> 3 </button>
+          <button id="deposit-cash" onclick="myCashRegister.deposit()"> Deposit Cash </button>
 
         </div>
         <div class="gridcontent">
 
-          <button id="0" type="button" onclick="myCashRegister.display(0)">"0"</button>
-          <button id="00" type="button" onclick="myCashRegister.display('00')">"00"</button>
-          <button id="." type="button" onclick="myCashRegister.display('.')">"."</button>
-          <button id="+" type="button" onclick="myCashRegister.addition(myCalculator)">"+"</button>
-          <button id="withdraw-cash" onclick="myCashRegister.withdraw()">"withdraw cash"</button>
+          <button id="0" type="button" onclick="myCashRegister.display(0)">0</button>
+          <button id="00" type="button" onclick="myCashRegister.display('00')">00</button>
+          <button id="." type="button" onclick="myCashRegister.display('.')"> .</button>
+          <button id="withdraw-cash" onclick="myCashRegister.withdraw()">Withdraw Cash</button>
 
         </div>
         <div class="gridcontent">
 
-          <button id="blank-1"> </button>
-          <button id="blank-2"> </button>
-          <button id="blank-3"> </button>
-          <button id="=" type="button" onclick="myCashRegister.equals(myCalculator)">"="</button>
-          <button id= "blank-4" </button>
+          <button id="/" type="button" onclick="myCashRegister.division(myCalculator)"> / </button>
+          <button id="multiply" onclick="myCashRegister.multiplication(myCalculator)"> * </button>
+          <button id="+" type="button" onclick="myCashRegister.addition(myCalculator)"> + </button>
+          <button id="subract" type="button" onclick="myCashRegister.subtraction(myCalculator)"> - </button>
 
+        </div>
+        <div id="subtract" class="gridcontent">
+
+          <button id="=" type="button" onclick="myCashRegister.equals(myCalculator)"> = </button>
+
+          </div>
         </div>
       </div>
     </div>
-</div>
+  </div>
 
 
     <!--Include the JS Files Here -->

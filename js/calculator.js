@@ -10,107 +10,63 @@ function calculatorModule(){
 
 
 //load number
-function load(x){
-
-return total = x;
-
-
-
+function load(x) {
+  return total = x;
 };
-
-
 
  //get total
-function getTotal(){
-
+function getTotal() {
   return total;
-
 };
-
-
 
  //add
-function add(x){
-
-isValid(x);
-
+function add(x) {
+  isValid(x);
   return total += x;
-
 };
-
 
 //subtract
-function subtract(x){
-
-isValid(x);
-
+function subtract(x) {
+  isValid(x);
   return total -= x;
-
-
 };
 
-
 //multiply
-function multiply(x){
-
-isValid(x);
-
-
+function multiply(x) {
+  isValid(x);
   return total *= x;
-
 };
 
 //divide
-function divide(x){
-
-isValid(x);
-
+function divide(x) {
+  isValid(x);
   return total /= x;
-
 };
-
 
  //recall
-function recallMemory(x){
-
+function recallMemory(x) {
   return memory;
-
 };
 
-
 //save
-function saveMemory(x){
-
+function saveMemory(x) {
    return memory = total;
-
 };
 
 //clear
-function clearMemory(x){
-
+function clearMemory(x) {
    return total = 0;
-
 };
 
 //validate
-function isValid(num){
-
- if(typeof num === "number"){
-
+function isValid(num) {
+ if(typeof num === "number") {
       return true;
-
     }
-
- else{
-
+else{
 throw new Error;
-
     }
    };
-
-
-
-
 
 return {
 

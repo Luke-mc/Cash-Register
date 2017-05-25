@@ -13,7 +13,6 @@ var cashRegister = (function() {
     document.getElementById("display").innerHTML = display.join('');
   };
 
-
    var _clearAll = function() {
     document.getElementById("display").innerHTML = '0.00';
     display =[];
@@ -26,29 +25,20 @@ var cashRegister = (function() {
   };
 
   var _getBalance = function() {
-
-
     _display(balance);
-
   };
 
   var _deposit = function() {
-
     displayValue = parseInt( display.join('') );
     balance += displayValue;
     _clear();
-
-
   };
 
   var _withdraw = function() {
-
     displayValue = parseInt( display.join('') );
     balance -= displayValue;
      _clear();
-
   };
-
 
   var _addition = function(myCalculator) {
     displayValue = parseInt( display.join('') );
@@ -122,10 +112,7 @@ var cashRegister = (function() {
 
       default: break;
     }
-
-
   };
-
 
   return {
     display: _display,
@@ -139,7 +126,6 @@ var cashRegister = (function() {
     multiplication: _multiplication,
     division: _division,
     equals: _equals
-
   };
 
 });
